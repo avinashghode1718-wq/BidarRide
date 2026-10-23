@@ -19,7 +19,7 @@ h1{font-size:clamp(3.2rem,7.4vw,6.2rem);letter-spacing:-.075em;line-height:.94;m
 section{padding:82px 0}.head{max-width:690px;margin-bottom:35px}.eyebrow{color:var(--yellow);font-size:.75rem;letter-spacing:.17em;text-transform:uppercase;font-weight:900}.head h2{font-size:clamp(2rem,4.5vw,3.6rem);line-height:1.03;letter-spacing:-.055em;margin:12px 0}.head p{color:var(--muted);margin:0}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:var(--card);border:1px solid #303030;border-radius:20px;padding:25px}.feature .icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#2a3015;color:var(--yellow);font-size:1.5rem}.feature h3{margin:20px 0 8px}.feature p{color:#aaa;margin:0;font-size:.95rem}
 .booking{background:#171717;border-block:1px solid #303030}.booking-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}.booking-intro h2{font-size:clamp(2.4rem,5vw,4.4rem);line-height:.98;letter-spacing:-.065em;margin:14px 0}.booking-intro p{color:#bbb}.steps{display:grid;gap:14px;margin-top:26px}.step{display:flex;gap:12px;align-items:flex-start}.step-num{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#111;font-weight:950}.step small{color:#aaa;display:block}
-.form{background:#202020;border:1px solid #383838;border-radius:23px;padding:24px;display:grid;gap:14px}.form h3{margin:0 0 2px;font-size:1.4rem}.field{display:grid;gap:6px}.field label{font-size:.84rem;color:#ddd;font-weight:700}.field input,.field select,.field textarea{width:100%;background:#121212;color:white;border:1px solid #424242;border-radius:11px;padding:12px 13px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow)}.field textarea{min-height:78px;resize:vertical}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{color:#a6a6a6;font-size:.78rem}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:#aaa}.checkline input{margin-top:5px;accent-color:var(--yellow)}
+.form{background:#202020;border:1px solid #383838;border-radius:23px;padding:24px;display:grid;gap:14px}.form h3{margin:0 0 2px;font-size:1.4rem}.field{display:grid;gap:6px}.field label{font-size:.84rem;color:#ddd;font-weight:700}.field input,.field select,.field textarea{width:100%;background:#121212;color:white;border:1px solid #424242;border-radius:11px;padding:12px 13px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow)}.field textarea{min-height:78px;resize:vertical}.location-tools{display:flex;gap:8px;flex-wrap:wrap}.location-tools button{background:#303030;color:#f5d90a;border:1px solid #555;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:700}.location-tools button:disabled{opacity:.6}.search-results{display:grid;gap:6px}.search-results button{width:100%;text-align:left;background:#151515;color:#fff;border:1px solid #444;border-radius:10px;padding:10px;cursor:pointer}.location-status{font-size:.78rem;color:#bbb;min-height:1em}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{color:#a6a6a6;font-size:.78rem}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:#aaa}.checkline input{margin-top:5px;accent-color:var(--yellow)}
 .city{background:radial-gradient(ellipse at 15% 30%,rgba(217,255,54,.07),transparent 35%),#101010}.citygrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.citybox{border:1px solid #3b3b3b;border-radius:22px;padding:26px;background:#191919}.citybox h3{margin-top:0}.citybox p{color:#aaa}.contactrow{display:flex;gap:12px;align-items:center;margin:14px 0}.contactrow .symbol{width:42px;height:42px;border-radius:13px;background:#292f15;color:var(--yellow);display:grid;place-items:center}.contactrow small{display:block;color:#aaa}
 footer{padding:26px 0;color:#aaa;border-top:1px solid #303030;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.foot b{color:white}
 @media(max-width:800px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:18px;background:#111;flex-direction:column;border-bottom:1px solid #333}.navlinks.open{display:flex}.menu{display:block}.navcta{display:none}.hero-grid,.booking-grid,.citygrid{grid-template-columns:1fr}.hero-grid{padding:58px 0 35px;gap:5px}.ride-art{min-height:320px}.features{grid-template-columns:1fr 1fr}.booking-grid{gap:28px}section{padding:65px 0}}
@@ -53,8 +53,8 @@ footer{padding:26px 0;color:#aaa;border-top:1px solid #303030;font-size:.85rem}.
 <div class="field"><label for="phone">Your mobile number *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your contact number" required></div>
 <div class="twocol"><div class="field"><label for="type">Ride type *</label><select id="type" name="type" required><option value="">Select ride</option><option>Bike</option><option>Auto</option><option>Car</option></select></div><div class="field"><label for="date">Pickup date *</label><input id="date" name="date" type="date" required></div></div>
 <div class="twocol"><div class="field"><label for="time">Pickup time *</label><input id="time" name="time" type="time" required></div><div class="field"><label for="passengers">Passengers</label><select id="passengers" name="passengers"><option>1</option><option>2</option><option>3</option><option>4 or more (please confirm)</option></select></div></div>
-<div class="field"><label for="pickup">Pickup location / landmark *</label><input id="pickup" name="pickup" placeholder="e.g. Bidar Bus Stand" required></div>
-<div class="field"><label for="drop">Destination *</label><input id="drop" name="drop" placeholder="Where are you going?" required></div>
+<div class="field"><label for="pickup">Pickup location / landmark *</label><input id="pickup" name="pickup" placeholder="Search a place or enter a landmark" required><div class="location-tools"><button type="button" id="usegps">◎ Use my current location</button><button type="button" id="searchpickup">Search pickup</button></div><div id="pickupresults" class="search-results" aria-live="polite"></div><div id="pickupstatus" class="location-status">Allow location access when asked. Or search a place in Bidar.</div><input type="hidden" id="pickupcoords" name="pickupcoords"></div>
+<div class="field"><label for="drop">Drop location / destination *</label><input id="drop" name="drop" placeholder="Search destination or enter a landmark" required><div class="location-tools"><button type="button" id="searchdrop">Search destination</button></div><div id="dropresults" class="search-results" aria-live="polite"></div><div id="dropstatus" class="location-status">Search by place name, then tap the correct result.</div><input type="hidden" id="dropcoords" name="dropcoords"></div>
 <div class="field"><label for="notes">Extra instructions (optional)</label><textarea id="notes" name="notes" placeholder="Landmark, luggage, return trip, etc."></textarea></div>
 <label class="checkline"><input type="checkbox" required> I understand this is a ride request. The team must confirm availability and fare on WhatsApp.</label>
 <button class="btn" type="submit">Send booking on WhatsApp ↗</button><div class="note">No payment is taken on this website. Please wait for confirmation before starting your trip.</div>
@@ -69,6 +69,39 @@ const menuBtn=document.getElementById('menubtn'),nav=document.getElementById('na
 menuBtn.addEventListener('click',()=>{let open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
 document.getElementById('year').textContent=new Date().getFullYear();
+// Location tools: GPS is requested only after the customer taps the button.
+const $=id=>document.getElementById(id);
+async function searchPlace(which){
+ const input=$(which), results=$(which+'results'), status=$(which+'status');
+ const q=input.value.trim(); results.innerHTML='';
+ if(q.length<3){status.textContent='Enter at least 3 characters, such as Bidar Bus Stand.';return;}
+ status.textContent='Searching places…'; const btn=$(which==='pickup'?'searchpickup':'searchdrop'); btn.disabled=true;
+ try{
+  const url='https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=in&viewbox=76.3,18.0,77.0,17.5&bounded=0&q='+encodeURIComponent(q+', Bidar, Karnataka, India');
+  const res=await fetch(url,{headers:{'Accept-Language':'en'}}); if(!res.ok) throw new Error('Search service unavailable');
+  const data=await res.json();
+  if(!data.length){status.textContent='No matching place found. Try another spelling or enter the landmark manually.';return;}
+  status.textContent='Tap the correct result:';
+  data.forEach(place=>{const b=document.createElement('button');b.type='button';b.textContent=place.display_name;b.addEventListener('click',()=>{input.value=place.display_name;$(which+'coords').value=place.lat+','+place.lon;results.innerHTML='';status.textContent='Location selected ✓';});results.appendChild(b);});
+ }catch(err){status.textContent='Could not search right now. You can type the full landmark manually.';}
+ finally{btn.disabled=false;}
+}
+$('searchpickup').addEventListener('click',()=>searchPlace('pickup'));
+$('searchdrop').addEventListener('click',()=>searchPlace('drop'));
+$('usegps').addEventListener('click',()=>{
+ const status=$('pickupstatus'), btn=$('usegps');
+ if(!navigator.geolocation){status.textContent='GPS is not supported in this browser. Type your pickup landmark instead.';return;}
+ status.textContent='Requesting your location permission…';btn.disabled=true;
+ navigator.geolocation.getCurrentPosition(async pos=>{
+  const lat=pos.coords.latitude,lon=pos.coords.longitude;$('pickupcoords').value=lat+','+lon;
+  status.textContent='GPS found. Getting nearby address…';
+  try{const r=await fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat='+lat+'&lon='+lon);const d=await r.json();$('pickup').value=d.display_name||('GPS location: '+lat.toFixed(6)+', '+lon.toFixed(6));status.textContent='Current pickup location selected ✓';}
+  catch(e){$('pickup').value='GPS location: '+lat.toFixed(6)+', '+lon.toFixed(6);status.textContent='GPS selected. Address lookup unavailable; coordinates will be shared.';}
+  btn.disabled=false;
+ },err=>{status.textContent=err.code===1?'Location permission denied. Allow location in browser settings or type your pickup manually.':'Could not get GPS. Turn on phone Location and try again, or type your pickup manually.';btn.disabled=false;},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+});
+// If a customer edits a selected location, clear its old coordinates to avoid mismatches.
+['pickup','drop'].forEach(id=>$(id).addEventListener('input',()=>{$(id+'coords').value='';}));
 const dateInput=document.getElementById('date');const now=new Date();dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
 document.getElementById('rideform').addEventListener('submit',function(e){
  e.preventDefault();const f=new FormData(e.currentTarget);
@@ -81,7 +114,9 @@ document.getElementById('rideform').addEventListener('submit',function(e){
  'Pickup time: '+f.get('time'),
  'Passengers: '+f.get('passengers'),
  'Pickup: '+f.get('pickup'),
+ 'Pickup map: '+(f.get('pickupcoords')?'https://www.google.com/maps?q='+f.get('pickupcoords'):'Not selected; use address above'),
  'Destination: '+f.get('drop'),
+ 'Destination map: '+(f.get('dropcoords')?'https://www.google.com/maps?q='+f.get('dropcoords'):'Not selected; use address above'),
  'Extra instructions: '+(f.get('notes')||'None'),
  '',
  'Please confirm driver availability and fare.'
@@ -89,4 +124,5 @@ document.getElementById('rideform').addEventListener('submit',function(e){
  window.location.href='https://wa.me/919740100189?text='+encodeURIComponent(lines.join('\n'));
 });
 </script>
+<!-- Place search uses user-triggered OpenStreetMap Nominatim requests. Attribution: © OpenStreetMap contributors. For high-volume commercial use, configure a commercial geocoding provider. -->
 </body></html>

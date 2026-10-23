@@ -1,33 +1,21 @@
-BIDARRIDE WEBSITE — WHATSAPP BOOKING
-====================================
+BidarRide location upgrade
 
-This is a mobile-friendly static website prototype for local ride requests in Bidar.
-Customers can select bike, auto or car, enter pickup/destination/date/time, and send
-the request as a WhatsApp message to +91 97401 00189.
+Includes:
+- Use my current location button for pickup (browser permission required).
+- Search pickup and destination by place name and choose a result.
+- Sends selected coordinates as Google Maps links in the WhatsApp booking message.
+- Manual landmark typing remains available as a fallback.
+- WhatsApp booking number remains +91 97401 00189.
 
-IMPORTANT BEFORE LAUNCH
------------------------
-- This is a booking-request website, not a full Rapido clone or live dispatch system.
-- It does not automatically locate drivers, calculate verified fares, track rides, or
-  guarantee a slot. You must manually confirm driver availability and fare on WhatsApp.
-- Confirm you are authorized to operate a local ride service and that each driver/vehicle
-  meets applicable permits, insurance, safety and local transport requirements.
-- The phone number is taken from the provided transport business details. Change it in
-  index.html if you want a separate BidarRide booking WhatsApp number.
-- Replace the brand name if needed before publishing.
+Update the live GitHub Pages site:
+1. Download and extract this ZIP on your phone.
+2. Open your GitHub repository: avinashghode1718-wq/BidarRide.
+3. Tap Add file > Upload files.
+4. Upload the included index.html to the repository root and confirm replacing the existing index.html.
+5. Commit changes. GitHub Pages will redeploy automatically; wait a few minutes, then refresh the site.
 
-PUBLISH FREE USING GITHUB PAGES (Android phone)
------------------------------------------------
-1. Download and extract the ZIP.
-2. Sign in at https://github.com/ and create a Public repository named BidarRide.
-3. Open repository > Add file > Upload files.
-4. Upload index.html into the root folder and commit changes.
-5. Open Settings > Pages.
-6. Under Build and deployment choose Deploy from a branch.
-7. Select branch main and folder /(root), then Save.
-8. Wait a few minutes and use the website link shown in Settings > Pages.
-
-WhatsApp flow
--------------
-The form opens a WhatsApp chat with a prefilled request. The customer must tap Send.
-The booking is only confirmed when you reply and confirm availability and fare.
+Important:
+- GPS works on HTTPS and only after the customer gives browser permission.
+- Search requires an internet connection. If search fails, customers can type a landmark manually.
+- This prototype uses user-triggered OpenStreetMap Nominatim search/reverse-geocoding with low-volume use and attribution. Its public service has strict limits and is not guaranteed for a growing commercial ride-booking service; switch to a suitable commercial geocoding provider before scaling.
+- WhatsApp opens a prefilled message; the customer still taps Send. Ride and fare require manual confirmation.
