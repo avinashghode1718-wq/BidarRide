@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="BidarRide — book a local ride in Bidar by WhatsApp. Bike, auto and car ride requests.">
+<title>BidarRide — Your City. Your Ride.</title>
+<style>
+:root{--bg:#101010;--card:#191919;--yellow:#d9ff36;--white:#fff;--muted:#b7b7b7;--line:#303030;--max:1100px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:9;background:rgba(16,16,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:1.2rem;font-weight:950;letter-spacing:-.05em}.brand span{color:var(--yellow)}.navlinks{display:flex;gap:24px;color:#ddd;font-size:.9rem}.navlinks a:hover{color:var(--yellow)}.menu{display:none;background:transparent;color:white;border:1px solid #444;border-radius:10px;padding:8px 11px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:999px;padding:14px 20px;background:var(--yellow);color:#101010;font-weight:900;cursor:pointer;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.dark{background:#272727;color:#fff;border:1px solid #454545}.hero{overflow:hidden;position:relative;background:radial-gradient(ellipse at 85% 25%,rgba(217,255,54,.14),transparent 35%),linear-gradient(135deg,#171717,#101010 65%);border-bottom:1px solid var(--line)}
+.hero-grid{min-height:570px;padding:76px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}.tag{display:inline-flex;gap:8px;align-items:center;border:1px solid #424b1b;color:var(--yellow);background:#1b2011;padding:7px 12px;border-radius:99px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:clamp(3.2rem,7.4vw,6.2rem);letter-spacing:-.075em;line-height:.94;margin:22px 0;font-weight:950}h1 span{color:var(--yellow)}.lead{font-size:1.1rem;color:#c4c4c4;max-width:520px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.smallprint{font-size:.82rem;color:#a9a9a9;margin-top:18px}
+.ride-art{min-height:370px;position:relative;display:grid;place-items:center}.orb{position:absolute;width:330px;max-width:90%;aspect-ratio:1;border-radius:50%;border:1px solid #454b2a;box-shadow:0 0 80px rgba(217,255,54,.08),inset 0 0 80px rgba(217,255,54,.04)}.ride-card{position:relative;width:min(100%,350px);background:#202020;border:1px solid #414141;border-radius:28px;padding:24px;transform:rotate(-3deg);box-shadow:0 30px 80px #000}.ride-top{display:flex;justify-content:space-between;align-items:center;color:#bbb;font-size:.8rem}.ride-top b{color:var(--yellow);font-size:1rem}.route{margin:25px 0;display:grid;grid-template-columns:20px 1fr;gap:12px}.dots{display:flex;flex-direction:column;align-items:center;padding-top:6px}.dots i{display:block;width:10px;height:10px;border-radius:50%;border:2px solid var(--yellow)}.dots span{height:42px;border-left:2px dashed #676767}.route strong{display:block}.route small{color:#999}.fake-map{height:94px;border-radius:15px;background:repeating-linear-gradient(25deg,#303030 0 2px,#252525 2px 25px);position:relative;overflow:hidden}.fake-map:after{content:"";position:absolute;left:20%;top:55%;width:65%;height:4px;border-radius:8px;background:var(--yellow);transform:rotate(-23deg);box-shadow:0 0 15px #d9ff36}.ride-types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.ride-type{border:1px solid #343434;background:#1b1b1b;border-radius:17px;padding:17px;text-align:left}.ride-type b{display:block;margin-top:7px}.ride-type small{color:#aaa}
+section{padding:82px 0}.head{max-width:690px;margin-bottom:35px}.eyebrow{color:var(--yellow);font-size:.75rem;letter-spacing:.17em;text-transform:uppercase;font-weight:900}.head h2{font-size:clamp(2rem,4.5vw,3.6rem);line-height:1.03;letter-spacing:-.055em;margin:12px 0}.head p{color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:var(--card);border:1px solid #303030;border-radius:20px;padding:25px}.feature .icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#2a3015;color:var(--yellow);font-size:1.5rem}.feature h3{margin:20px 0 8px}.feature p{color:#aaa;margin:0;font-size:.95rem}
+.booking{background:#171717;border-block:1px solid #303030}.booking-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}.booking-intro h2{font-size:clamp(2.4rem,5vw,4.4rem);line-height:.98;letter-spacing:-.065em;margin:14px 0}.booking-intro p{color:#bbb}.steps{display:grid;gap:14px;margin-top:26px}.step{display:flex;gap:12px;align-items:flex-start}.step-num{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#111;font-weight:950}.step small{color:#aaa;display:block}
+.form{background:#202020;border:1px solid #383838;border-radius:23px;padding:24px;display:grid;gap:14px}.form h3{margin:0 0 2px;font-size:1.4rem}.field{display:grid;gap:6px}.field label{font-size:.84rem;color:#ddd;font-weight:700}.field input,.field select,.field textarea{width:100%;background:#121212;color:white;border:1px solid #424242;border-radius:11px;padding:12px 13px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow)}.field textarea{min-height:78px;resize:vertical}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{color:#a6a6a6;font-size:.78rem}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:#aaa}.checkline input{margin-top:5px;accent-color:var(--yellow)}
+.city{background:radial-gradient(ellipse at 15% 30%,rgba(217,255,54,.07),transparent 35%),#101010}.citygrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.citybox{border:1px solid #3b3b3b;border-radius:22px;padding:26px;background:#191919}.citybox h3{margin-top:0}.citybox p{color:#aaa}.contactrow{display:flex;gap:12px;align-items:center;margin:14px 0}.contactrow .symbol{width:42px;height:42px;border-radius:13px;background:#292f15;color:var(--yellow);display:grid;place-items:center}.contactrow small{display:block;color:#aaa}
+footer{padding:26px 0;color:#aaa;border-top:1px solid #303030;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.foot b{color:white}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:18px;background:#111;flex-direction:column;border-bottom:1px solid #333}.navlinks.open{display:flex}.menu{display:block}.navcta{display:none}.hero-grid,.booking-grid,.citygrid{grid-template-columns:1fr}.hero-grid{padding:58px 0 35px;gap:5px}.ride-art{min-height:320px}.features{grid-template-columns:1fr 1fr}.booking-grid{gap:28px}section{padding:65px 0}}
+@media(max-width:520px){.wrap{width:calc(100% - 28px)}.nav{height:66px}.navlinks{top:66px}.hero-grid{min-height:0;padding-top:45px}.hero h1{font-size:clamp(3.2rem,16vw,4.5rem)}.lead{font-size:1rem}.actions .btn{width:100%}.ride-art{min-height:285px}.ride-card{padding:18px}.features{grid-template-columns:1fr}.ride-types{gap:7px}.ride-type{padding:12px 9px;font-size:.9rem}.twocol{grid-template-columns:1fr}.form{padding:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">BIDAR<span>RIDE</span></a>
+<nav class="navlinks" id="navlinks"><a href="#rides">Ride options</a><a href="#booking">Book a ride</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
+<a class="btn navcta" href="#booking">Book now ↗</a><button class="menu" id="menubtn" aria-expanded="false">Menu ☰</button>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="tag">● Local rides in Bidar</div><h1>Your city.<br>Your ride.<br><span>Your time.</span></h1>
+<p class="lead">Book a bike, auto, or car ride around Bidar with a simple WhatsApp request. No complicated app needed to get started.</p>
+<div class="actions"><a class="btn" href="#booking">Book your ride ↗</a><a class="btn dark" href="https://wa.me/919740100189?text=Hi%20BidarRide%2C%20I%20want%20to%20ask%20about%20a%20ride.">Chat on WhatsApp</a></div>
+<p class="smallprint">Local ride requests · WhatsApp booking · Driver availability confirmed by our team</p></div>
+<div class="ride-art"><div class="orb"></div><div class="ride-card"><div class="ride-top"><span>YOUR NEXT RIDE</span><b>BIDAR ↗</b></div><div class="route"><div class="dots"><i></i><span></span><i></i></div><div><div><strong>Pickup location</strong><small>Where should we meet you?</small></div><div style="margin-top:18px"><strong>Drop location</strong><small>Where are you going?</small></div></div></div><div class="fake-map"></div><div class="ride-types"><div class="ride-type">🏍️<b>Bike</b><small>Quick trips</small></div><div class="ride-type">🛺<b>Auto</b><small>City travel</small></div><div class="ride-type">🚗<b>Car</b><small>Comfort ride</small></div></div></div></div>
+</div></section>
+<section id="rides"><div class="wrap"><div class="head"><div class="eyebrow">Ride options</div><h2>Choose how you move.</h2><p>Tell us the ride type that fits your trip. Availability and fare are confirmed over WhatsApp before your ride is accepted.</p></div>
+<div class="features"><article class="feature"><div class="icon">🏍️</div><h3>Bike ride</h3><p>For quick solo trips and getting around town. Choose bike in the booking form.</p></article><article class="feature"><div class="icon">🛺</div><h3>Auto ride</h3><p>A convenient option for short city journeys, shopping, and everyday errands.</p></article><article class="feature"><div class="icon">🚗</div><h3>Car ride</h3><p>Request a car for a more comfortable ride or when you have extra luggage.</p></article></div>
+</div></section>
+<section class="booking" id="booking"><div class="wrap booking-grid">
+<div class="booking-intro"><div class="eyebrow">WhatsApp booking</div><h2>Your ride is a few taps away.</h2><p>Enter your trip details. We'll prepare a WhatsApp message to the booking number with your request.</p>
+<div class="steps"><div class="step"><div class="step-num">1</div><div><strong>Share your trip</strong><small>Pickup, destination, time, and ride type.</small></div></div><div class="step"><div class="step-num">2</div><div><strong>Send on WhatsApp</strong><small>Review your details and send the message.</small></div></div><div class="step"><div class="step-num">3</div><div><strong>Wait for confirmation</strong><small>Your ride is booked only after the team confirms availability and fare.</small></div></div></div>
+</div>
+<form class="form" id="rideform"><h3>Book a ride</h3>
+<div class="field"><label for="customer">Your name *</label><input id="customer" name="customer" autocomplete="name" placeholder="Full name" required></div>
+<div class="field"><label for="phone">Your mobile number *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your contact number" required></div>
+<div class="twocol"><div class="field"><label for="type">Ride type *</label><select id="type" name="type" required><option value="">Select ride</option><option>Bike</option><option>Auto</option><option>Car</option></select></div><div class="field"><label for="date">Pickup date *</label><input id="date" name="date" type="date" required></div></div>
+<div class="twocol"><div class="field"><label for="time">Pickup time *</label><input id="time" name="time" type="time" required></div><div class="field"><label for="passengers">Passengers</label><select id="passengers" name="passengers"><option>1</option><option>2</option><option>3</option><option>4 or more (please confirm)</option></select></div></div>
+<div class="field"><label for="pickup">Pickup location / landmark *</label><input id="pickup" name="pickup" placeholder="e.g. Bidar Bus Stand" required></div>
+<div class="field"><label for="drop">Destination *</label><input id="drop" name="drop" placeholder="Where are you going?" required></div>
+<div class="field"><label for="notes">Extra instructions (optional)</label><textarea id="notes" name="notes" placeholder="Landmark, luggage, return trip, etc."></textarea></div>
+<label class="checkline"><input type="checkbox" required> I understand this is a ride request. The team must confirm availability and fare on WhatsApp.</label>
+<button class="btn" type="submit">Send booking on WhatsApp ↗</button><div class="note">No payment is taken on this website. Please wait for confirmation before starting your trip.</div>
+</form>
+</div></section>
+<section id="how"><div class="wrap"><div class="head"><div class="eyebrow">How it works</div><h2>Simple for customers. Simple to run.</h2><p>Start locally without building a full ride-hailing app. Handle requests and driver assignment through WhatsApp while you grow.</p></div><div class="features"><article class="feature"><div class="icon">①</div><h3>Customer requests</h3><p>The customer sends ride details through WhatsApp using the booking form.</p></article><article class="feature"><div class="icon">②</div><h3>You check drivers</h3><p>Contact an available driver, agree the fare, and check the pickup time.</p></article><article class="feature"><div class="icon">③</div><h3>Confirm the ride</h3><p>Reply to the customer with the agreed fare, driver details, and confirmation.</p></article></div></div></section>
+<section class="city" id="contact"><div class="wrap citygrid"><div><div class="eyebrow">Made for your city</div><h2 style="font-size:clamp(2.5rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;margin:15px 0">Bidar moves<br>with <span style="color:var(--yellow)">BidarRide.</span></h2><p style="color:#aaa;max-width:500px">A simple local ride-booking concept for Bidar, Karnataka. Start with WhatsApp requests and expand your driver network as demand grows.</p><a class="btn" href="#booking">Request a ride ↗</a></div><div class="citybox"><h3>Booking & support</h3><div class="contactrow"><div class="symbol">☏</div><div><small>Call the booking team</small><strong>+91 97401 00189</strong></div></div><div class="contactrow"><div class="symbol">◉</div><div><small>WhatsApp bookings</small><a href="https://wa.me/919740100189?text=Hi%20BidarRide%2C%20I%20need%20help%20with%20a%20ride." style="font-weight:800">Message BidarRide ↗</a></div></div><div class="contactrow"><div class="symbol">⌖</div><div><small>Service area</small><strong>Bidar, Karnataka</strong></div></div><p style="font-size:.8rem">Replace the sample brand name, booking phone number, and service area before you publish if you choose different details.</p></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><b>BIDARRIDE</b> · Your city. Your ride.</div><div>© <span id="year"></span> BidarRide. All rights reserved.</div><a href="#home">Back to top ↑</a></div></footer>
+<script>
+const menuBtn=document.getElementById('menubtn'),nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{let open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const dateInput=document.getElementById('date');const now=new Date();dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById('rideform').addEventListener('submit',function(e){
+ e.preventDefault();const f=new FormData(e.currentTarget);
+ const lines=[
+ 'BIDARRIDE — NEW RIDE REQUEST',
+ 'Name: '+f.get('customer'),
+ 'Customer mobile: '+f.get('phone'),
+ 'Ride type: '+f.get('type'),
+ 'Pickup date: '+f.get('date'),
+ 'Pickup time: '+f.get('time'),
+ 'Passengers: '+f.get('passengers'),
+ 'Pickup: '+f.get('pickup'),
+ 'Destination: '+f.get('drop'),
+ 'Extra instructions: '+(f.get('notes')||'None'),
+ '',
+ 'Please confirm driver availability and fare.'
+ ];
+ window.location.href='https://wa.me/919740100189?text='+encodeURIComponent(lines.join('\n'));
+});
+</script>
+</body></html>
